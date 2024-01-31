@@ -27,6 +27,11 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v3
+      with:
+        cmdline-tools-version: 8512546
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
